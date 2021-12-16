@@ -25,12 +25,12 @@ def demo(n, block_orientation, rotate, inreverse):
     # start demo
     while True:
     msg = "Frohe"
-    for char in string_to_iterate:
+    for char in msg:
         show_message(device, char, fill="white", font=proportional(CP437_FONT))
         time.sleep(0.1)
     
     msg = "Weihnachten"
-    for char in string_to_iterate:
+    for char in msg:
     show_message(device, char, fill="white", font=proportional(CP437_FONT))
     time.sleep(0.1)
     
