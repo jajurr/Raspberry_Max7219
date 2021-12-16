@@ -27,7 +27,7 @@ def demo(n, block_orientation, rotate, inreverse):
         msg = "Frohe Weihnachten"
         for char in msg:
             show_message(device, char, fill="white", font=proportional(CP437_FONT))
-            time.sleep(0.05)
+            time.sleep(0.01)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='matrix_demo arguments',
