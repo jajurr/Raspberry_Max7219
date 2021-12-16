@@ -25,14 +25,14 @@ def demo(n, block_orientation, rotate, inreverse):
     # start demo
     while True:
         msg = "Frohe"
-        print(msg)
-        show_message(device, msg, fill="white", font=proportional(CP437_FONT))
-        time.sleep(0.1)
+        for char in string_to_iterate:
+			show_message(device, char, fill="white", font=proportional(CP437_FONT))
+			time.sleep(0.1)
 
         msg = "Weihnachten"
-        print(msg)
-        show_message(device, msg, fill="white", font=proportional(CP437_FONT))
-        time.sleep(1)
+        for char in string_to_iterate:
+			show_message(device, char, fill="white", font=proportional(CP437_FONT))
+			time.sleep(0.1)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='matrix_demo arguments',
