@@ -17,8 +17,8 @@ from luma.core.legacy import text, show_message
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while(True):
-    if(GPIO.input(11) == True):
+    if(GPIO.input(1) == True):
         print("Created device")
