@@ -3,32 +3,27 @@
 # Copyright (c) 2017-18 Richard Hull and contributors
 # See LICENSE.rst for details.
 
-import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+import RPi.GPIO as gpio # Import Raspberry Pi GPIO library
 
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-
+gpio.setmode(gpio.BCM)
+taster = [14,15,18,23]
 
 print("Created device")
 
 while (True) : # Run forever
-    if (GPIO.input(11) == True) :
+    if (gpio == 11):
         print("Button was pushed!")
-    if (GPIO.input(12) == True) :
+    if (gpio == 12):
         print("Button was pushed!")
-    if (GPIO.input(13) == True) :
+    if (gpio == 13):
         print("Button was pushed!")
-    if (GPIO.input(15) == True) :
+    if (gpio == 14):
         print("Button was pushed!")
-    if (GPIO.input(16) == True) :
+    if (gpio == 15):
         print("Button was pushed!")
-    if (GPIO.input(17) == True) :
+    if (gpio == 16):
         print("Button was pushed!")
-    if (GPIO.input(18) == True) :
+    if (gpio == 17):
+        print("Button was pushed!")
+    if (gpio == 18):
         print("Button was pushed!")
