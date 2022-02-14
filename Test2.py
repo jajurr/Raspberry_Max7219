@@ -6,24 +6,23 @@
 import RPi.GPIO as gpio # Import Raspberry Pi GPIO library
 
 gpio.setmode(gpio.BCM)
-taster = [14,15,18,23]
 
 print("Created device")
 
 while (True) : # Run forever
-    if (gpio == 11):
-        print("Button was pushed!")
-    if (gpio == 12):
-        print("Button was pushed!")
-    if (gpio == 13):
-        print("Button was pushed!")
-    if (gpio == 14):
-        print("Button was pushed!")
-    if (gpio == 15):
-        print("Button was pushed!")
-    if (gpio == 16):
+    if (gpio == 18):
         print("Button was pushed!")
     if (gpio == 17):
         print("Button was pushed!")
-    if (gpio == 18):
+    if (gpio == 27):
+        print("Button was pushed!")
+    if (gpio == 23):
+        print("Button was pushed!")
+    if (gpio == 22):
+        print("Button was pushed!")
+    if (gpio == 24):
+        print("Button was pushed!")
+    if (gpio == 25):
+        print("Button was pushed!")
+    if (gpio == 9):
         print("Button was pushed!")
