@@ -16,16 +16,15 @@ GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input 
 matrixe = 1
 matrix = led.matrix(cascaded=matrixe)
 
+print("Created device")
 while 1 == 1: # Run forever
+    matrix.pixel(1,1,1)
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
-        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
-        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
     if GPIO.input(13) == GPIO.HIGH:
         print("Button 13 was pushed!")
-        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
