@@ -5,6 +5,7 @@
 import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 import max7219.led as led
 import time
+from luma.led_matrix.device import max7219
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
