@@ -25,7 +25,7 @@ def demo(n, block_orientation, rotate, inreverse):
         device.clear()
         for y in range(8):
             for x in range(8):
-                device.pixel(x, y, 1, redraw=True)
+                device.pixel(1, 1, 1, redraw=True)
                 time.sleep(0.1)
     
 if __name__ == "__main__":

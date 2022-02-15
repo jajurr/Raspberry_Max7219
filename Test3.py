@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-
-import max7219.led as led
-
-matrix = led.matrix(cascaded=1)
-matrix.clear()
-
-matrix.letter(deviceId = 0, ord("A"))
+from luma.led_matrix.device import max7219
+from luma.core.render import canvas
+...
+device = max7219(...
+with canvas(device) as draw:
+   draw.point(1,1), fill="white")
