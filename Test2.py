@@ -17,6 +17,7 @@ matrixe = 1
 matrix = led.matrix(cascaded=matrixe)
 
 print("Created device")
+matrix.show_message("READY")
 while 1 == 1: # Run forever
     matrix.pixel(1,1,1)
     if GPIO.input(11) == GPIO.HIGH:
