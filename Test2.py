@@ -18,13 +18,13 @@ matrix = led.matrix(cascaded=matrixe)
 while 1 == 1: # Run forever
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
-        matrix.pixel([0], [0], 1)
+        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
-        matrix.pixel([0], [1], 1)
+        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
     if GPIO.input(13) == GPIO.HIGH:
         print("Button 13 was pushed!")
-        matrix.pixel([1], [1], 1)
+        matrix.pixel(1, 1, 1)
         time.sleep(0.5)
