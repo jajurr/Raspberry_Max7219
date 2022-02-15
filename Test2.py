@@ -6,6 +6,11 @@ import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 import max7219.led as led
 import time
 from luma.led_matrix.device import max7219
+from luma.core.interface.serial import spi, noop
+from luma.core.render import canvas
+from luma.core.virtual import viewport
+from luma.core.legacy import text, show_message
+from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
@@ -19,7 +24,8 @@ matrix = led.matrix(cascaded=matrixe)
 print("Created device")
 matrix.show_message("READY")
 while 1 == 1: # Run forever
-    matrix.pixel(1,1,1)
+    with canvas(self.device) as draw:
+        draw.point((1, 1))
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
         time.sleep(0.5)
