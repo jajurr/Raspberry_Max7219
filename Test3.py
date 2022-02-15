@@ -1,6 +1,11 @@
-import max7219
-from machine import Pin, SPI
-spi = SPI(1)
-display = max7219.Matrix8x8(spi, Pin('X5'), 1)
-display.pixel(0,0,1)
-display.show()
+import time
+
+from luma.led_matrix.device import neopixel
+from luma.core.render import canvas
+
+device = neopixel(cascaded=32)
+
+for i in range(device.cascaded):
+    with canvas(device) as draw:
+        draw.point((i, 0), fill="green")
+    time.sleep(0.5)
