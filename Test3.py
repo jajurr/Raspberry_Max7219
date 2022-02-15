@@ -9,14 +9,10 @@ device.brightness(7)
 try:
   while True:
     device.clear()
-
-    # eine LED durch alle Zeilen laufen lassen
-    for y in range(8):
-      for x in range(8):
-        device.pixel(x, y, 1, redraw=True)
-        time.sleep(0.01)
-        device.pixel(x, y, 0, redraw=True)
-        time.sleep(0.01)
+    print("Created device")
+    
+    device.pixel(1, 1, 1, redraw=True)
+    time.sleep(1)
 
 except KeyboardInterrupt:
   device.clear()
