@@ -26,12 +26,16 @@ def steuerung(gpio):
     print(modulu)
     if modulu == 0:
         richtung = [0, -1] #oben
+        time.sleep(0.01)
     if modulu == 1:
         richtung = [-1, 0] #links
+        time.sleep(0.01)
     if modulu == 2:
         richtung = [0, 1] #unten
+        time.sleep(0.01)
     if modulu == 3:
         richtung = [1, 0] #rechts
+        time.sleep(0.01)
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 GPIO.add_event_detect(11, GPIO.FALLING, callback=steuerung)
