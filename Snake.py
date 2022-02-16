@@ -14,14 +14,12 @@ def steuerung(gpio):
     global intRichtung, modulu, richtung
     print(gpio)
     if (gpio == 11):
-        print("Button 11 was pushed!")
         intRichtung = intRichtung + 1
+        time.sleep(0.01)
     if (gpio == 12):
-        print("Button 12 was pushed!")
         intRichtung = intRichtung + 3
+        time.sleep(0.01)
     modulu = intRichtung % 4
-    print("intRichtung")
-    print(intRichtung)
     print("modulu:")
     print(modulu)
     if modulu == 0:
