@@ -44,4 +44,5 @@ GPIO.add_event_detect(13, GPIO.FALLING, callback=Richtung)
 	
 print("Created device")
 while 1 == 1: # Run forever
-   
+    if GPIO.input(13) == GPIO.HIGH:
+        print("Button 13 was pushed!")
