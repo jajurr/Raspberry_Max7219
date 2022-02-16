@@ -1,37 +1,52 @@
-import RPi.GPIO as gpio
-import time
-import max7219.led as led
+import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+from MyMax7219 import MyMatrix
 from random import randint
+import time
 
-gpio.setmode(gpio.BCM)
-taster = [14,15,18,23]
-matrixe = 1
-matrix = led.matrix(cascaded=matrixe)
-height = 7
-width = 7
+matrix = MyMatrix()
+
+intRichtung = 0
+modulu = 0
+
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
 def steuerung(gpio):
-  global richtung
-  if(gpio == 14):   #rechts
-    richtung = [1,0]
-  elif(gpio == 15): #oben
-    richtung = [0,-1]
-  elif(gpio == 18): #unten
-     richtung = [0,1]
-  elif(gpio == 23): #links
-    richtung = [-1,0]
+    global intRichtung, modulu, richtung
+    print(gpio)
+    if (gpio == 11):
+        print("Button 11 was pushed!")
+        intRichtung = intRichtung + 1
+    if (gpio == 12):
+        print("Button 12 was pushed!")
+        intRichtung = intRichtung + 3
+    modulu = intRichtung % 4
+    print("intRichtung")
+    print(intRichtung)
+    print("modulu:")
+    print(modulu)
+    if modulu == 0:
+        richtung = [0, -1] #oben
+    if modulu == 1:
+        richtung = [-1, 0] #links
+    if modulu == 2:
+        richtung = [0, 1] #unten
+    if modulu == 3:
+        richtung = [1, 0] #rechts
 
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.add_event_detect(11, GPIO.FALLING, callback=steuerung)
 
-for i in taster:
-  gpio.setup(i,gpio.IN,pull_up_down=gpio.PUD_UP)
-  gpio.add_event_detect(i, gpio.FALLING, callback=steuerung)
-
+GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.add_event_detect(12, GPIO.FALLING, callback=steuerung)
+	
 def startSpiel():
   global snake, richtung, apfel
-  snake = [[randint(2,width-4),randint(3,height-3)]]
+  snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
-    print("READY")
+      matrix.pixel(1, 1, 1)
+      time.sleep(0.1)
+      matrix.pixel(1, 1, 0)
   neuerApfel()
 
 def neuerApfel():
@@ -39,7 +54,7 @@ def neuerApfel():
   apfelSnake = False
   while apfelSnake == False:
     apfelSnake = True
-    apfel = [randint(0,width),randint(0,height)]
+    apfel = [randint(0,7),randint(0,7)]
     for i in snake:
       if(i == apfel):
         apfelSnake = False
@@ -49,8 +64,8 @@ def neuerApfel():
 def endOfGame():
   for i in range(0,2):
     matrix.clear()
-    for i in range(0,width+1):
-      for j in range(0,height+1):
+    for i in range(0,8):
+      for j in range(0,8):
         matrix.pixel(i,j,1)
         time.sleep(0.001)
     time.sleep(0.01)
@@ -80,7 +95,7 @@ while True:
   snake.insert(0,newSnake)
 
 
-  if(snake[0][0] > width or snake[0][1] > height
+  if(snake[0][0] > 7 or snake[0][1] > 7
 	or snake[0][0] < 0 or snake[0][1] < 0 ):
     endOfGame()
     pass
