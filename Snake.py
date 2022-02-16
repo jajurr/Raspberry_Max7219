@@ -53,9 +53,9 @@ def endOfGame():
         matrix.pixel(i,j,1)
         time.sleep(0.001)
     time.sleep(0.01)
-  matrix.show_message("GAME OVER")
+  print("GAME OVER")
   punkte = len(snake)-1
-  matrix.show_message(str(punkte)+" PUNKTE")
+  print(str(punkte)+" PUNKTE")
 
   startSpiel()
 
