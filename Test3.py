@@ -47,7 +47,7 @@ def startSpiel():
       device.clear()
       for y in range(8):
           for x in range(8):
-              device.pixel(1, 1, 1, redraw=True)
+              matrix.pixel(1, 1, 1, redraw=True)
               time.sleep(0.1)
   neuerApfel()
 
