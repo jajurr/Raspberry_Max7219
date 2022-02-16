@@ -45,9 +45,9 @@ def startSpiel():
   richtung = [0,0]
   while richtung == [0,0]:
       matrix.clear()
-      for y in range(8):
-          for x in range(8):
-              matrix.pixel(1, 1, 1, redraw=True)
+      for i in range(8):
+          for j in range(8):
+              matrix.pixel(x, y, 1)
               time.sleep(0.1)
   neuerApfel()
 
