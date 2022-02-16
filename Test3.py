@@ -18,17 +18,15 @@ def Richtung(gpio):
         intRichtung += 3
     modulu = intRichtung % 4
     print(modulu)
-    match modulu:
-        case 0:
-            print("Modulo 0")
-        case 1:
-            print("Modulo 1")
-        case 2:
-            print("Modulo 2")
-        case 3:
-            print("Modulo 3")
-        case _:
-	    print("Modulo Error!")
+    if modulu == 0
+        print("Modulo 0")
+    if modulu == 1
+        print("Modulo 1")
+    if modulu == 2
+        print("Modulo 2")
+    if modulu == 3
+        print("Modulo 3")
+
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 GPIO.add_event_detect(11, GPIO.FALLING, callback=Richtung)
