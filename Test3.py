@@ -25,28 +25,30 @@ def steuerung(gpio):
     print("modulu:")
     print(modulu)
     if modulu == 0:
-        richtung = [0, -1]
+        richtung = [0, -1] #oben
     if modulu == 1:
-        richtung = [-1, 0]
+        richtung = [-1, 0] #links
     if modulu == 2:
-        richtung = [0, 1]
+        richtung = [0, 1] #unten
     if modulu == 3:
-        richtung = [1, 0]
+        richtung = [1, 0] #rechts
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 GPIO.add_event_detect(11, GPIO.FALLING, callback=steuerung)
 
 GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 GPIO.add_event_detect(12, GPIO.FALLING, callback=steuerung)
-
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 	
 def startSpiel():
   global snake, richtung, apfel
   snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
-    print("READY")
+      device.clear()
+      for y in range(8):
+          for x in range(8):
+              device.pixel(1, 1, 1, redraw=True)
+              time.sleep(0.1)
   neuerApfel()
 
 def neuerApfel():
