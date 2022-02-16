@@ -34,13 +34,12 @@ def steuerung(gpio):
         richtung = [1, 0]
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.add_event_detect(11, GPIO.FALLING, callback=Richtung)
+GPIO.add_event_detect(11, GPIO.FALLING, callback=steuerung)
 
 GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.add_event_detect(12, GPIO.FALLING, callback=Richtung)
+GPIO.add_event_detect(12, GPIO.FALLING, callback=steuerung)
 
 GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-
 	
 def startSpiel():
   global snake, richtung, apfel
