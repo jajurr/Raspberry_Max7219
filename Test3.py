@@ -44,7 +44,7 @@ def startSpiel():
   snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
-      device.clear()
+      matrix.clear()
       for y in range(8):
           for x in range(8):
               matrix.pixel(1, 1, 1, redraw=True)
