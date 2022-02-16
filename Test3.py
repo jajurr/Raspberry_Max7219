@@ -17,6 +17,7 @@ def Richtung(gpio):
         print("Button 12 was pushed!")
         intRichtung += 3
     modulu = intRichtung % 4
+    print(modulu)
     match modulu:
         case 0:
             print("Modulo 0")
