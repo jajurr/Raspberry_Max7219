@@ -15,21 +15,21 @@ def Richtung(gpio):
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
         intRichtung += 1
-        print(intRichtung)
+        print("intRichtung:" + intRichtung)
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
         intRichtung += 3
-        print(intRichtung)
+        print("intRichtung:" + intRichtung)
     modulu = intRichtung % 4
-    print(modulu)
+    print("modulu:" + modulu)
     if modulu == 0:
-        print(modulu)
+        print("modulu:" + modulu)
     if modulu == 1:
-        print(modulu)
+        print("modulu:" + modulu)
     if modulu == 2:
-        print(modulu)
+        print("modulu:" + modulu)
     if modulu == 3:
-        print(modulu)
+        print("modulu:" + modulu)
 
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
