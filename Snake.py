@@ -21,6 +21,7 @@ def steuerung(gpio):
   elif(gpio == 23): #links
     richtung = [-1,0]
 
+
 for i in taster:
   gpio.setup(i,gpio.IN,pull_up_down=gpio.PUD_UP)
   gpio.add_event_detect(i, gpio.FALLING, callback=steuerung)

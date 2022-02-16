@@ -44,11 +44,9 @@ def startSpiel():
   snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
-      matrix.clear()
-      for i in range(8):
-          for j in range(8):
-              matrix.pixel(i, j, 1)
-              time.sleep(0.1)
+      matrix.pixel(1, 1, 1)
+      time.sleep(0.1)
+      matrix.pixel(1, 1, 0)
   neuerApfel()
 
 def neuerApfel():
