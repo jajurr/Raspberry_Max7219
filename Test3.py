@@ -16,7 +16,8 @@ def Richtung(gpio):
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
         intRichtung += 3
-    match intRichtung % 4:
+    modulu = intRichtung % 4
+    match modulu:
         case 0:
             print("Modulo 0")
         case 1:
