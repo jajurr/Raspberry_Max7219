@@ -6,7 +6,7 @@ import time
 matrix = MyMatrix()
 
 intRichtung = 0
-modulu 0 =
+modulu = 0
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
