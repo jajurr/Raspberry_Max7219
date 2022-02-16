@@ -18,13 +18,13 @@ def Richtung(gpio):
         intRichtung += 3
     modulu = intRichtung % 4
     print(modulu)
-    if modulu == 0
+    if modulu == 0:
         print("Modulo 0")
-    if modulu == 1
+    if modulu == 1:
         print("Modulo 1")
-    if modulu == 2
+    if modulu == 2:
         print("Modulo 2")
-    if modulu == 3
+    if modulu == 3:
         print("Modulo 3")
 
 
