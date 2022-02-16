@@ -43,7 +43,7 @@ GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input 
 	
 def startSpiel():
   global snake, richtung, apfel
-  snake = [[randint(2,width-4),randint(3,height-3)]]
+  snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
     matrix.show_message("READY")
@@ -54,7 +54,7 @@ def neuerApfel():
   apfelSnake = False
   while apfelSnake == False:
     apfelSnake = True
-    apfel = [randint(0,width),randint(0,height)]
+    apfel = [randint(0,7),randint(0,7)]
     for i in snake:
       if(i == apfel):
         apfelSnake = False
@@ -64,8 +64,8 @@ def neuerApfel():
 def endOfGame():
   for i in range(0,2):
     matrix.clear()
-    for i in range(0,width+1):
-      for j in range(0,height+1):
+    for i in range(0,8):
+      for j in range(0,8):
         matrix.pixel(i,j,1)
         time.sleep(0.001)
     time.sleep(0.01)
@@ -94,7 +94,7 @@ while True:
   snake.insert(0,newSnake)
 
 
-  if(snake[0][0] > width or snake[0][1] > height
+  if(snake[0][0] > 7 or snake[0][1] > 7
 	or snake[0][0] < 0 or snake[0][1] < 0 ):
     endOfGame()
     pass

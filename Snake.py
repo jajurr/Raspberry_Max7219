@@ -62,6 +62,7 @@ def endOfGame():
 startSpiel()
 
 while True:
+  print("Created device")
   keinePause = False
   newSnake = [snake[0][0]+richtung[0],
               snake[0][1]+richtung[1]]
