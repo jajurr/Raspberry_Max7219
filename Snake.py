@@ -30,7 +30,7 @@ def startSpiel():
   snake = [[randint(2,width-4),randint(3,height-3)]]
   richtung = [0,0]
   while richtung == [0,0]:
-    matrix.show_message("READY")
+    print("READY")
   neuerApfel()
 
 def neuerApfel():
