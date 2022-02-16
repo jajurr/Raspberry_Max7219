@@ -5,18 +5,18 @@ import time
 
 matrix = MyMatrix()
 
-intRichtung = 0
+global intRichtung = 0
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
 def Richtung(gpio):
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
-        intRichtung += 1
+        global intRichtung += 1
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
-        intRichtung += 3
-    modulu = intRichtung % 4
+        global intRichtung += 3
+    modulu = global intRichtung % 4
     print(modulu)
     if modulu == 0:
         print("Modulo 0")
