@@ -15,20 +15,21 @@ def Richtung(gpio):
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
         intRichtung += 1
+        print(intRichtung)
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
         intRichtung += 3
-    print(intRichtung)
+        print(intRichtung)
     modulu = intRichtung % 4
     print(modulu)
     if modulu == 0:
-        print("Modulo 0")
+        print(modulu)
     if modulu == 1:
-        print("Modulo 1")
+        print(modulu)
     if modulu == 2:
-        print("Modulo 2")
+        print(modulu)
     if modulu == 3:
-        print("Modulo 3")
+        print(modulu)
 
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
@@ -38,11 +39,10 @@ GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input 
 GPIO.add_event_detect(12, GPIO.FALLING, callback=Richtung)
 
 GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.add_event_detect(13, GPIO.FALLING, callback=Richtung)
-
 
 	
 print("Created device")
 while 1 == 1: # Run forever
     if GPIO.input(13) == GPIO.HIGH:
         print("Button 13 was pushed!")
+        time.sleep(0.5)
