@@ -46,7 +46,7 @@ def startSpiel():
   snake = [[randint(2,4),randint(3,5)]]
   richtung = [0,0]
   while richtung == [0,0]:
-    matrix.show_message("READY")
+    print("READY")
   neuerApfel()
 
 def neuerApfel():
@@ -69,15 +69,16 @@ def endOfGame():
         matrix.pixel(i,j,1)
         time.sleep(0.001)
     time.sleep(0.01)
-  matrix.show_message("GAME OVER")
+  print("GAME OVER")
   punkte = len(snake)-1
-  matrix.show_message(str(punkte)+" PUNKTE")
+  print(str(punkte)+" PUNKTE")
 
   startSpiel()
 
 startSpiel()
 
 while True:
+  print("Created device")
   keinePause = False
   newSnake = [snake[0][0]+richtung[0],
               snake[0][1]+richtung[1]]
