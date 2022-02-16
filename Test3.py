@@ -14,12 +14,12 @@ def Richtung(gpio):
     global intRichtung, modulu
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
-        intRichtung += 1
+        intRichtung = intRichtung + 1
         print("intRichtung:")
         print(intRichtung)
     if GPIO.input(12) == GPIO.HIGH:
         print("Button 12 was pushed!")
-        intRichtung += 3
+        intRichtung = intRichtung + 3
         print("intRichtung:")
         print(intRichtung)
     modulu = intRichtung % 4
