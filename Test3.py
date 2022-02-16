@@ -47,7 +47,7 @@ def startSpiel():
       matrix.clear()
       for i in range(8):
           for j in range(8):
-              matrix.pixel(x, y, 1)
+              matrix.pixel(i, j, 1)
               time.sleep(0.1)
   neuerApfel()
 
