@@ -12,6 +12,7 @@ GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
 def Richtung(gpio):
     global intRichtung, modulu
+    print(gpio)
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
         intRichtung = intRichtung + 1
