@@ -6,11 +6,12 @@ import time
 matrix = MyMatrix()
 
 intRichtung = 0
+modulu 0 =
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
 def Richtung(gpio):
-    global intRichtung
+    global intRichtung, modulu
     if GPIO.input(11) == GPIO.HIGH:
         print("Button 11 was pushed!")
         intRichtung += 1
