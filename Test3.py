@@ -8,10 +8,17 @@ matrix = MyMatrix()
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.add_event_detect(11, GPIO.FALLING, callback=Richtung)
+
 GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.add_event_detect(12, GPIO.FALLING, callback=Richtung)
+
 GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.add_event_detect(13, GPIO.FALLING, callback=Richtung)
 
-
+def Richtung(gpio):
+	print("Richtung was called!")
+	
 print("Created device")
 while 1 == 1: # Run forever
     if GPIO.input(11) == GPIO.HIGH:
