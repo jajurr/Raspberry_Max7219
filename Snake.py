@@ -5,35 +5,7 @@ import time
 
 matrix = MyMatrix()
 
-intRichtung = 0
-modulu = 0
-
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-
-def steuerung2(gpio):
-    global intRichtung, modulu, richtung
-    print(gpio)
-    if (gpio == 11):
-        intRichtung = intRichtung + 1
-        time.sleep(0.01)
-    if (gpio == 12):
-        intRichtung = intRichtung + 3
-        time.sleep(0.01)
-    modulu = intRichtung % 4
-    print("modulu:")
-    print(modulu)
-    if modulu == 0:
-        richtung = [0, -1] #oben
-        time.sleep(0.01)
-    if modulu == 1:
-        richtung = [-1, 0] #links
-        time.sleep(0.01)
-    if modulu == 2:
-        richtung = [0, 1] #unten
-        time.sleep(0.01)
-    if modulu == 3:
-        richtung = [1, 0] #rechts
-        time.sleep(0.01)
 
 def steuerung(gpio):
     global richtung
