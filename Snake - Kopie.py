@@ -10,7 +10,7 @@ modulu = 0
 
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 
-def steuerung2(gpio):
+def steuerung(gpio):
     global intRichtung, modulu, richtung
     print(gpio)
     if (gpio == 11):
@@ -34,44 +34,6 @@ def steuerung2(gpio):
     if modulu == 3:
         richtung = [1, 0] #rechts
         time.sleep(0.01)
-
-def steuerung(gpio):
-    global richtung
-    if richtung == [0,0]: #Noch keine Richtung
-        if gpio == 11
-            richtung = [-1,0]
-            return
-        if gpio = 12
-            richtung = [1,0]
-            return
-    if richtung == [0, -1]: #oben
-        if gpio == 11
-            richtung = [-1,0]
-            return
-        if gpio = 12
-            richtung = [1,0]
-            return
-    if richtung == [-1, 0]: #links
-        if gpio == 11
-            richtung = [0, 1]
-            return
-        if gpio = 12
-            richtung = [0, -1]
-            return
-    if richtung == [0, 1]: #unten
-        if gpio == 11
-            richtung = [1, 0]
-            return
-        if gpio = 12
-            richtung = [-1, 0]
-            return
-    if richtung == [0, 1]: #rechts
-        if gpio == 11
-            richtung = [0, -1]
-            return
-        if gpio = 12
-            richtung = [0, 1]
-            return
 
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 GPIO.add_event_detect(11, GPIO.FALLING, callback=steuerung)
