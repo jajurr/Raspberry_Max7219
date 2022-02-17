@@ -65,7 +65,7 @@ def steuerung(gpio):
         if gpio == 12:
             richtung = [-1, 0]
             return
-    if richtung == [0, 1]: #rechts
+    if richtung == [1, 0]: #rechts
         if gpio == 11:
             richtung = [0, -1]
             return
@@ -118,7 +118,6 @@ def endOfGame():
 startSpiel()
 
 while True:
-  print("Created device")
   keinePause = False
   newSnake = [snake[0][0]+richtung[0],
               snake[0][1]+richtung[1]]
