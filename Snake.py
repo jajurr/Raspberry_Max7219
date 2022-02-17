@@ -38,38 +38,38 @@ def steuerung2(gpio):
 def steuerung(gpio):
     global richtung
     if richtung == [0,0]: #Noch keine Richtung
-        if gpio == 11
+        if gpio == 11:
             richtung = [-1,0]
             return
-        if gpio = 12
+        if gpio = 12:
             richtung = [1,0]
             return
     if richtung == [0, -1]: #oben
-        if gpio == 11
+        if gpio == 11:
             richtung = [-1,0]
             return
-        if gpio = 12
+        if gpio = 12:
             richtung = [1,0]
             return
     if richtung == [-1, 0]: #links
-        if gpio == 11
+        if gpio == 11:
             richtung = [0, 1]
             return
-        if gpio = 12
+        if gpio = 12:
             richtung = [0, -1]
             return
     if richtung == [0, 1]: #unten
-        if gpio == 11
+        if gpio == 11:
             richtung = [1, 0]
             return
-        if gpio = 12
+        if gpio = 12:
             richtung = [-1, 0]
             return
     if richtung == [0, 1]: #rechts
-        if gpio == 11
+        if gpio == 11:
             richtung = [0, -1]
             return
-        if gpio = 12
+        if gpio = 12:
             richtung = [0, 1]
             return
 
